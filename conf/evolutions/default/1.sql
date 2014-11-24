@@ -1,0 +1,20 @@
+# --- Database schema
+
+# --- !Ups
+
+CREATE TABLE "ARTICLE" (
+  "ID" serial,
+  "TITLE"       VARCHAR(255) NOT NULL,
+  "LINK"        VARCHAR(255) NOT NULL,
+  "DESCRIPTION" TEXT         NOT NULL,
+  "DOMAIN"      VARCHAR(63)  NOT NULL,
+  "PUBLISHED"   TIMESTAMP    NOT NULL,
+  PRIMARY KEY ("ID")
+);
+
+# --- !Downs
+
+DROP TABLE IF EXISTS "ARTICLE";
+DROP SEQUENCE IF EXISTS "ARTICLE_ID_SEQ";
+
+
